@@ -1,5 +1,17 @@
 # attr_encrypted #
 
+## 4.0.0 ##
+
+* Changed: Updated the ActiveAdmin adapter so `assign_attributes` is called with 1 attribute sinsteda of 2 to avoid this issue when also using the `protected_attributes` gem:
+
+```
+Assignment.new(:claim_number => 'abc')
+ArgumentError: wrong number of arguments (given 2, expected 1)
+from ~/.rvm/gems/ruby-2.3.8@snapsheet/gems/activerecord-4.0.13/lib/active_record/attribute_assignment.rb:14:in `assign_attributes'
+```
+
+**Snapsheet Fork**
+
 ## 3.1.0 ##
 * Added: Abitilty to encrypt empty values. (@tamird)
 * Added: MIT license
